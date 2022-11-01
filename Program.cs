@@ -2,6 +2,7 @@ using contactsApi.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("ContactsApiConnectionString");
 
 // Add services to the container.
 
@@ -10,7 +11,7 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ContactsApiDbContext>(options => options.UseInMemoryDatabase("ContactsDb"));
+builder.Services.AddDbContext<ContactsApiDbContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
