@@ -1,4 +1,3 @@
-using contactsApi.Data;
 using contactsApi.Models;
 using contactsApi.Services;
 using Microsoft.AspNetCore.JsonPatch;
