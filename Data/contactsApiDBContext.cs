@@ -1,4 +1,4 @@
-using contactsApi.Models;
+using contactsApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace contactsApi.Data;
